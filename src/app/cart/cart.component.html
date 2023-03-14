@@ -7,7 +7,7 @@
 <div class="cart-item" *ngFor="let item of items; let i = index">
   <span>{{ item.title }} </span>
   <span>{{ item.price | currency }}</span>
-  <span><button type="button" (click)="borrarProducto(i)">Eliminar</button></span>
+  <button type="button" (click)="borrarProducto(i)">Eliminar</button>
 </div>
 
 <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
@@ -62,7 +62,9 @@
 
 
   <div>
-    <label><input type="checkbox">Acepto términos y condiciones</label><br>
+    <mat-checkbox formControlName="terminos">
+      <label><input type="checkbox">Acepto términos y condiciones</label><br>    
+    </mat-checkbox>
   </div>
 
   <button class="button" type="submit">Enviar</button>

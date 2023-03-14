@@ -18,7 +18,7 @@ export class CartComponent {
     sr: [''],
     name: ['', [Validators.required, Validators.minLength(3)]],
     address: ['', Validators.required, Validators.minLength(8)],
-    agreeToTerms: [false, Validators.requiredTrue],
+    terminos: [false, Validators.requiredTrue],
   });
 
   constructor(
@@ -26,16 +26,15 @@ export class CartComponent {
     private formBuilder: FormBuilder,
   ) {}
 
+  borrarProducto(index: number) {
+    this.cartService.borrarProducto(index);
+  }
 
   onSubmit(): void {
     // Process checkout data here
     this.items = this.cartService.clearCart();
     console.warn('Your order has been submitted', this.checkoutForm.value);
     this.checkoutForm.reset();
-  }
-
-  borrarProducto(index: number) {
-    this.cartService.borrarProducto(index);
   }
 
 }

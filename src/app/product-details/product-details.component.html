@@ -4,5 +4,7 @@
   <h3>{{ product.title }}</h3>
   <img [src]="product.image" style="width:350px;"/>
   <br><br><br><br>
-  <h4><button type="button">Comprar {{ product.price | currency }}<a routerLink="/cart" (click)="addToCart(product)"></a></button></h4>
+  <button mat-button (click)="addToCart(product)">Comprar</button>
+  <!--<button type="button">Comprar {{ product.price | currency }}(click)="addToCart(product)"></button>-->
+  <!--<h4><button type="button">Comprar {{ product.price | currency }}<a routerLink="/cart" (click)="addToCart(product)"></a></button></h4>-->
 </div>
