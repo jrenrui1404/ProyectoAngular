@@ -1,4 +1,4 @@
-<h2>Products</h2>
+<h2>Productos</h2>
 
 
 <div *ngFor = "let product of productos | async">
@@ -57,6 +57,7 @@
           <a [title]="product.title + ' details'"[routerLink]="['/products', product.id]">
           {{ product.title }}
           </a></mat-card-title>
+          <mat-card-subtitle><h1>{{product.description}}</h1></mat-card-subtitle>
         <img mat-card-lg-image src={{product.image}} >
       </mat-card-title-group>
     </mat-card-header>
@@ -66,7 +67,7 @@
       <mat-card-actions>
         <button mat-button (click)="like()">LIKE</button>
         <button mat-button (click)="share()">SHARE</button>
-        <button type="button">Comprar<a routerLink="/cart" (click)="addToCart(product)"></a></button>
+        <button type="button">COMPRAR<a routerLink="/cart" (click)="addToCart(product)"></a></button>
       </mat-card-actions>
   </mat-card>
 
