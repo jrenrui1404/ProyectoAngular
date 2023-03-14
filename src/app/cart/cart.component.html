@@ -1,0 +1,69 @@
+<h3>Tu carrito</h3>
+
+<p>
+  <a routerLink="/shipping">Precios de envío</a>
+</p>
+
+<div class="cart-item" *ngFor="let item of items; let i = index">
+  <span>{{ item.title }} </span>
+  <span>{{ item.price | currency }}</span>
+  <span><button type="button" (click)="borrarProducto(i)">Eliminar</button></span>
+</div>
+
+<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+
+  <div>
+
+    <h2>Dirigido</h2>
+
+    <mat-radio-group formControlName="sr">
+      <mat-radio-button value="Sr.">Señor</mat-radio-button>
+      <mat-radio-button value="Sra.">Señora</mat-radio-button>
+    </mat-radio-group>
+
+    <!--<mat-form-field appearance="fill">
+      <mat-label>Select</mat-label>
+      <mat-select>
+        <mat-option value="Sr.">Señor</mat-option>
+        <mat-option value="Sra.">Señora</mat-option>
+      </mat-select>
+    </mat-form-field>-->
+
+    <!--<mat-form-field appearance="fill">
+      <mat-label>Toppings</mat-label>
+      <mat-select [formControl]="toppings" multiple>
+        <mat-select-trigger>
+          {{toppings.value?.[0] || ''}}
+          <span *ngIf="(toppings.value?.length || 0) > 1" class="example-additional-selection">
+            (+{{(toppings.value?.length || 0) - 1}} {{toppings.value?.length === 2 ? 'other' : 'others'}})
+          </span>
+        </mat-select-trigger>
+        <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
+      </mat-select>
+    </mat-form-field>-->
+
+  </div>
+
+  <br>
+  <div>
+    <label for="password">Nombre</label>
+    <mat-form-field>
+      <input matInput placeholder="Nombre" formControlName="name">
+    </mat-form-field>
+  </div>
+
+ 
+  <div>
+    <label for="password">Contraseña</label>
+    <mat-form-field>
+      <input matInput type="password" placeholder="Contraseña" formControlName="name">
+    </mat-form-field>
+  </div>
+
+
+  <div>
+    <label><input type="checkbox">Acepto términos y condiciones</label><br>
+  </div>
+
+  <button class="button" type="submit">Enviar</button>
+</form>

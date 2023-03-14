@@ -1,0 +1,14 @@
+h3 {
+    text-align: center;
+    padding-top: 10%;
+    color: #000000;
+    font-weight: bold;
+    font-size: 25px;
+    font-family: Arial;
+    text-transform: uppercase;
+    font-style: inherit;
+}
+
+h3{
+    padding-bottom: 3%;
+}

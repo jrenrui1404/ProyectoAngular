@@ -1,0 +1,20 @@
+h1 {
+    text-align: center;
+    padding-top: 2%;
+    color: #000000;
+    font-weight: bold;
+    font-size: 20px;
+    font-family: Arial;
+    text-transform: uppercase;
+    font-style: inherit;
+}
+
+h4{
+    text-align: center;
+    color: #000000;
+    font-weight: bold;
+}
+
+h3{
+    text-align: center;
+}
